@@ -16,7 +16,6 @@ public class Movement2D : MonoBehaviour
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
     }
 
-    // Update is called once per frame
     public void MoveTo(Vector3 direction)
     {
         moveDirection = direction;
