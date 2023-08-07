@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// enemy 생성 코드
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
