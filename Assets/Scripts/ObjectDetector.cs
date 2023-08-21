@@ -38,6 +38,12 @@ public class ObjectDetector : MonoBehaviour
                     // 타워를 생성하는 SpawnTower() 호출
                     towerSpawner.SpawnTower(hit.transform);
                 }
+
+                // 광선에 부딪힌 오브젝트의 태그가 "UI"이면
+                if (hit.transform.CompareTag("UI"))
+                {
+                    Debug.Log("UI Click!");
+                }
             }
         }
     }
