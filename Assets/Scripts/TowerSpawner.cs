@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class TowerSpawner : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject towerPrefab;
+    public static GameObject towerPrefab;
     [SerializeField]
     private EnemySpawner enemySpawner; // 현재 맵에 존재하는 적 리스트 정보를 얻기 위해..
 
@@ -15,7 +14,12 @@ public class TowerSpawner : MonoBehaviour
 
         // 타워 건설 가능 여부 확인
         // 1. 현재 타일의 위치에 이미 타워가 건설되어 있으면 타워 건설 X
-        if(tile.IsBuildTower == true )
+        if(tile.IsBuildTower == true)
+        {
+            return;
+        }
+
+        if (towerPrefab == null) // 타워 프리팹이 설정되있지 않은 경우 타워 건설 X
         {
             return;
         }
